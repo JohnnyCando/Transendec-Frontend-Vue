@@ -9,7 +9,7 @@
             </div>
             <div class="wpo-section-content">
               <p>
-                <Link to="/ocean">Montacargas</Link>
+                <router-link to="/ocean">Montacargas</router-link>
               </p>
               <span>Calidad 100% Garantizada en el servicio.</span>
             </div>
@@ -23,7 +23,7 @@
             </div>
             <div class="wpo-section-content">
               <p>
-                <Link to="/road">Transporte</Link>
+                <router-link to="/road">Transporte</router-link>
               </p>
               <span>Calidad 100% Garantizada en el servicio.</span>
             </div>
@@ -96,5 +96,90 @@ export default {
 .wpo-section-style-2 .wpo-section-content,
 .wpo-section-style-3 .wpo-section-content {
   padding-right: 24px;
+}
+
+.wpo-section-area,
+.wpo-section-style-2,
+.wpo-section-area-3 {
+  background: #f5f5f5;
+}
+
+.wpo-section-icon {
+  text-align: center;
+  margin-top: -60px;
+}
+
+.wpo-section-content {
+  text-align: center;
+  padding: 30px 0 10px;
+  transition: all 0.5s;
+}
+
+.wpo-section-item:hover .wpo-section-content {
+  background: #34ccff;
+  color: #fff;
+}
+
+.wpo-section-item:hover .wpo-section-content p a {
+  color: #fff;
+}
+
+.wpo-section-item:hover .wpo-section-icon i.fi {
+  background: #34ccff;
+  color: #fff;
+}
+
+.wpo-section-content p {
+  font-size: 24px;
+  font-weight: 400;
+  transition: all 0.5s;
+}
+
+.wpo-section-content p a {
+  color: #333;
+  transition: all 0.5s;
+}
+
+.wpo-section-icon i.fi {
+  background: #f5f5f5;
+  padding: 47px 30px 30px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transition: all 0.5s;
+}
+
+.col-d {
+  padding: 0;
+}
+
+.wpo-section-area-3 .wpo-section-content {
+  padding: 35px 0;
+  padding-bottom: 20px;
+}
+
+.wpo-section-area-3 .wpo-section-icon {
+  text-align: center;
+  margin-top: -35px;
+}
+
+.wpo-section-area-3 .wpo-section-content p a:hover {
+  color: #34ccff;
+}
+
+.wpo-section-area-3 .wpo-section-icon .fi {
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.09);
+  border-radius: 5px;
+}
+
+.wpo-section-area-3 .wpo-section-content:hover {
+  background: none;
+}
+
+.wpo-section-area-3 .wpo-section-content:hover p a {
+  color: #333;
+}
+
+.wpo-section-area-3 .wpo-section-content p a:hover {
+  color: #34ccff;
 }
 </style>

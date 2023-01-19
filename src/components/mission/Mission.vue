@@ -31,7 +31,7 @@
 <script>
 // @ is an alias to /src
 export default {
-  name: 'aboutMain',
+  name: 'missionMain',
 }
 </script>
 <style>

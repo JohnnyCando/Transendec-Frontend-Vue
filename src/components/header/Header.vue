@@ -39,31 +39,15 @@
                 <ul>
                   <li class="active">
                     <router-link to="/">Inicio</router-link>
-                    <ul class="submenu">
-                      <li class="active">
-                        <router-link to="/">Home One</router-link>
-                      </li>
-                      <li><router-link to="/home2">Home Two</router-link></li>
-                      <li><router-link to="/home3">Home Three</router-link></li>
-                    </ul>
                   </li>
                   <li><router-link to="/about">Nosotros</router-link></li>
                   <li>
                     <router-link to="/service">Servicios</router-link>
                     <ul class="submenu">
-                      <li>
-                        <router-link to="/servicesingle">
-                          service single
+                      <li :key="service" v-for="service in services">
+                        <router-link :to="`/service/${service.id}`">
+                          {{ service.name }}
                         </router-link>
-                      </li>
-                      <li>
-                        <router-link to="/freight">Air Freight</router-link>
-                      </li>
-                      <li>
-                        <router-link to="/road">Road Freight</router-link>
-                      </li>
-                      <li>
-                        <router-link to="/ocean">Ocean Freight</router-link>
                       </li>
                     </ul>
                   </li>
@@ -129,10 +113,31 @@
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
   name: 'HeaderMain',
   props: {
     msg: String,
+  },
+  setup() {
+    const getServices = () => {
+      let servicesArray = [
+        {
+          name: 'Montacargas',
+          id: 1,
+        },
+        {
+          name: 'Transporte',
+          id: 2,
+        },
+      ]
+      return servicesArray
+    }
+    let services = ref([])
+    services = getServices()
+    return {
+      services,
+    }
   },
 }
 </script>

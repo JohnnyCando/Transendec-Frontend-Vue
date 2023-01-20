@@ -16,6 +16,18 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: 'about' */ '../views/AboutView.vue'),
   },
+  {
+    path: '/service',
+    name: 'about',
+    children: [
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+        path: ':id',
+        component: import('../views/Service.vue'),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({

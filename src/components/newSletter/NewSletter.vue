@@ -1,38 +1,36 @@
 <template>
-  <section className="wpo-newsletter-section-2">
-    <div id="contactPageTest" className="container">
-      <div className="row">
-        <div className="col-lg-4">
-          <h2>Subscribe Our newsletter</h2>
-          <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-          </p>
+  <section class="wpo-newsletter-section-2">
+    <div id="contactPageTest" class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>Suscríbete a nuestro boletín</h2>
+          <p>Mantente informado de todos nuestros servicios en tiempo real.</p>
         </div>
-        <div className="col-lg-8">
-          <div className="newsletter">
-            <div className="wpo-newsletter-form">
+        <div class="col-lg-8">
+          <div class="newsletter">
+            <div class="wpo-newsletter-form">
               <form onSubmit="">
-                <div className="row">
-                  <div className="col-lg-4 col-md-4 col-sm-6">
+                <div class="row">
+                  <div class="col-lg-4 col-md-4 col-sm-6">
                     <div>
                       <input
                         type="text"
-                        className="form-control"
-                        placeholder="Name"
+                        class="form-control"
+                        placeholder="Nombre"
                       />
                     </div>
                   </div>
-                  <div className="col-lg-4 col-md-4 col-sm-6">
+                  <div class="col-lg-4 col-md-4 col-sm-6">
                     <div>
                       <input
                         type="text"
-                        className="form-control"
-                        placeholder="Email"
+                        class="form-control"
+                        placeholder="Correo Electrónico"
                       />
                     </div>
                   </div>
-                  <div className="col-lg-4 col-md-4 col-sm-6">
-                    <button type="submit">Subscribe</button>
+                  <div class="col-lg-4 col-md-4 col-sm-6">
+                    <button type="submit">Suscríbete</button>
                   </div>
                 </div>
               </form>

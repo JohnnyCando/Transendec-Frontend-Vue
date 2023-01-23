@@ -18,7 +18,7 @@ const routes = [
   },
   {
     path: '/service',
-    name: 'about',
+    name: 'service',
     children: [
       {
         // UserProfile will be rendered inside User's <router-view>

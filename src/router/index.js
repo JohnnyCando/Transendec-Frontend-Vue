@@ -18,13 +18,23 @@ const routes = [
   },
   {
     path: '/service',
-    name: 'service',
     children: [
       {
         // UserProfile will be rendered inside User's <router-view>
         // when /user/:id/profile is matched
         path: ':id',
         component: import('../views/Service.vue'),
+      },
+    ],
+  },
+  {
+    path: '/article',
+    children: [
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+        path: ':id',
+        component: import('../views/Articles.vue'),
       },
     ],
   },

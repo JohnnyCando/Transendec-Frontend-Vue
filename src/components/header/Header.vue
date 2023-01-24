@@ -52,14 +52,7 @@
                     </ul>
                   </li>
                   <li>
-                    <router-link to="/">Articulos</router-link>
-                    <ul class="submenu">
-                      <li :key="article" v-for="article in articles">
-                        <router-link :to="`/article/${article.id}`">
-                          {{ article.name }}
-                        </router-link>
-                      </li>
-                    </ul>
+                    <router-link to="/articles">Articulos</router-link>
                   </li>
                   <li>
                     <router-link to="/">Paginas</router-link>

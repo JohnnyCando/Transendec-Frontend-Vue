@@ -37,15 +37,9 @@ const routes = [
     ],
   },
   {
-    path: '/article',
-    children: [
-      {
-        // UserProfile will be rendered inside User's <router-view>
-        // when /user/:id/profile is matched
-        path: ':id',
-        component: import('../views/Articles.vue'),
-      },
-    ],
+    path: '/articles',
+    name: 'articles',
+    component: () => import('../views/Articles.vue'),
   },
 ]
 

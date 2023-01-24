@@ -6,6 +6,7 @@
     <aboutMain />
     <missionMain />
     <newSletter></newSletter>
+    <footerMain></footerMain>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import breadCumbMain from '@/components/breadcumb/BreadCumb'
 import aboutMain from '@/components/about/About'
 import newSletter from '@/components/newSletter/NewSletter'
 import missionMain from '@/components/mission/Mission'
+import footerMain from '@/components/footer/Footer'
 import { ref } from 'vue'
 export default {
   name: 'AboutView',
@@ -28,6 +30,7 @@ export default {
     breadCumbMain,
     missionMain,
     newSletter,
+    footerMain,
   },
   setup() {
     let bdtitle = ref('About Us')

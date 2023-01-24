@@ -54,9 +54,22 @@
                   <li>
                     <router-link to="/">Articulos</router-link>
                     <ul class="submenu">
-                      <li :key="article" v-for="article in articles">
-                        <router-link :to="`/article/${article.id}`">
-                          {{ article.name }}
+                      <li>
+                        <router-link to="/blog">Blog with sidebar</router-link>
+                      </li>
+                      <li>
+                        <router-link to="/blog-fullwidth">
+                          Blog full width
+                        </router-link>
+                      </li>
+                      <li>
+                        <router-link to="/blog-single">
+                          Blog single sidebar
+                        </router-link>
+                      </li>
+                      <li>
+                        <router-link to="/blog-single-fullwidth">
+                          Blog single fullwidth
                         </router-link>
                       </li>
                     </ul>
@@ -108,7 +121,7 @@ export default {
   },
   setup() {
     const getServices = () => {
-      const servicesArray = [
+      let servicesArray = [
         {
           name: 'Montacargas',
           id: 1,
@@ -120,30 +133,10 @@ export default {
       ]
       return servicesArray
     }
-    const getArticles = () => {
-      const articlesArray = [
-        {
-          name: 'Blog full width',
-          id: 1,
-        },
-        {
-          name: 'Blog single sidebar',
-          id: 2,
-        },
-        {
-          name: 'Blog single fullwidth',
-          id: 3,
-        },
-      ]
-      return articlesArray
-    }
     let services = ref([])
-    let articles = ref([])
     services = getServices()
-    articles = getArticles()
     return {
       services,
-      articles,
     }
   },
 }

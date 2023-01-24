@@ -1,26 +1,47 @@
 <template>
-  <div class="wpo-about-style-2">
+  <div class="service-style-1">
     <div class="container">
+      <div class="col-l2">
+        <div class="wpo-section-title text-center">
+          <span>Nosotros proporcionamos lo mejor</span>
+          <h2>Nuestra Misión</h2>
+        </div>
+      </div>
       <div class="row">
-        <div class="col-lg-6 offset-lg-6 about-wrap">
-          <div class="wpo-about-content">
-            <div class="wpo-about-icon">
-              <i class="fi flaticon-travel"></i>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="wpo-service-item">
+            <div class="wpo-service-single">
+              <div class="service-img">
+                <img :src="missionSafatyEnsure" alt="" />
+              </div>
+              <div class="service-content">
+                <h3>Seguridad Garantizada</h3>
+              </div>
             </div>
-            <h2>¿Quienes somos?</h2>
-            <p>
-              Contamos con una moderna y amplia flota de vehículos de no más de
-              5 años de antigüedad, equipados con tecnología GPS y herramientas
-              tecnológicas manejadas por profesionales
-            </p>
-            <p>
-              que garantizan un TRANSPORTE SEGURO y EFICIENTE de su mercancía
-              hacia el Norte del país. Recojo - Reparto de Carga y Mercancías.
-            </p>
-            <span>
-              Además atendemos vuestras URGENCIAS de transporte de carga
-              paletizada.
-            </span>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="wpo-service-item">
+            <div class="wpo-service-single">
+              <div class="service-img">
+                <img :src="missionBUiltComunity" alt="" />
+              </div>
+              <div class="service-content2">
+                <h3>Construir una Comunidad de Confianza</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="wpo-service-item">
+            <div class="wpo-service-single">
+              <div class="service-img">
+                <img :src="missionDelivery" alt="" />
+              </div>
+              <div class="service-content3">
+                <h3>Entrega a tiempo</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -30,51 +51,39 @@
 
 <script>
 // @ is an alias to /src
+import simg1 from '@/assets/images/about-page/1.jpg'
+import simg2 from '@/assets/images/about-page/2.jpg'
+import simg3 from '@/assets/images/about-page/4.jpg'
+import { ref } from 'vue'
 export default {
   name: 'missionMain',
+  setup() {
+    let missionSafatyEnsure = ref(simg1)
+    let missionBUiltComunity = ref(simg2)
+    let missionDelivery = ref(simg3)
+    return {
+      missionSafatyEnsure,
+      missionBUiltComunity,
+      missionDelivery,
+    }
+  },
 }
 </script>
 <style>
-.wpo-about-style-2 {
-  background: url('@/assets/images/about/5c.jpg') no-repeat center top / cover;
+.service-style-1 .service-content,
+.service-style-1 .service-content2,
+.service-style-1 .service-content3 {
+  top: 76%;
 }
 
-.wpo-about-style-2 .about-wrap {
-  background: rgba(20, 36, 64, 0.8);
-  padding: 50px;
-  float: left;
+.service-style-1 .wpo-service-single:hover .wpo-service-content,
+.service-style-1 .wpo-service-single:hover .wpo-service-content2,
+.service-style-1 .wpo-service-single:hover .wpo-service-content3 {
+  top: 0;
 }
 
-.wpo-about-style-2 .content {
-  padding: 50px;
-}
-
-.wpo-about-style-2 .wpo-about-content h2,
-.wpo-about-style-3 .wpo-about-content h2 {
-  color: #fff;
-}
-
-.wpo-about-style-2 .wpo-about-content p,
-.wpo-about-style-3 .wpo-about-content p {
-  color: #fff;
-}
-
-.wpo-about-style-2 .wpo-about-content span,
-.wpo-about-style-3 .wpo-about-content span {
-  color: #fff;
-}
-
-.wpo-about-style-2 .si-text p,
-.wpo-about-style-3 .si-text p {
-  color: #fff;
-}
-
-.wpo-about-style-2 .si-text span,
-.wpo-about-style-3 .si-text span {
-  color: #fff;
-}
-
-.wpo-section-item-2 {
-  padding: 25px 0 50px;
+.service-style-1 {
+  background: #fff;
+  padding: 100px 0 70px;
 }
 </style>

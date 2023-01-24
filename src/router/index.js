@@ -16,6 +16,37 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: 'about' */ '../views/AboutView.vue'),
   },
+  {
+    path: '/contact',
+    name: 'contact',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: 'about' */ '../views/ContactView.vue'),
+  },
+  {
+    path: '/service',
+    children: [
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+        path: ':id',
+        component: import('../views/Service.vue'),
+      },
+    ],
+  },
+  {
+    path: '/article',
+    children: [
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+        path: ':id',
+        component: import('../views/Articles.vue'),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({

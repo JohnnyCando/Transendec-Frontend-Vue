@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html lang="">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>Transendec – Transporte y Logistica</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
   </head>
+  <style>
+    #whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: none;
+    }
+  </style>
   <body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>
+        We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to continue.
+      </strong>
     </noscript>
     <div id="app"></div>
+    <div id="whatsapp">
+      <a href="https://api.whatsapp.com/send?phone=+593&text=Buenos días, me interesan sus servicios!">
+        <img
+          src="whatsapp.png"
+          width="50px"
+          height="50px"
+          title="Escríbenos por Whastapp"
+          alt="Escríbenos por Whastapp"
+        />
+      </a>
+    </div>
     <!-- built files will be auto injected -->
   </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $('#whatsapp').fadeIn()
+        } else {
+          $('#whatsapp').fadeOut()
+        }
+      })
+    })
+  </script>
+
 </html>
+

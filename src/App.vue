@@ -1,16 +1,7 @@
 <template>
   <router-view />
 </template>
-
 <style>
-/*------------------------------------------------------------------
-[Master Stylesheet]
-Theme Name:     Shifter – Transport and Logistics React Template
-Version:        1.0.0
-Author:         wpoceans
-URL:            https://themeforest.net/user/wpoceans
--------------------------------------------------------------------*/
-
 /*---------------------------
   Fonts
 ----------------------------*/
@@ -18,7 +9,6 @@ URL:            https://themeforest.net/user/wpoceans
 /*--------------------------------------------------------------
 #0.1    Theme Reset Style
 --------------------------------------------------------------*/
-
 body {
   font-family: 'Roboto', sans-serif !important;
   font-size: 16px;

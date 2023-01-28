@@ -1,5 +1,5 @@
 <template>
-  <form onsubmit="return false">
+  <form onsubmit="return false" id="contact-form">
     <div class="contact-form form-style row">
       <div class="col-12 col-lg-6">
         <input
@@ -76,14 +76,18 @@ export default {
       address: '',
       notes: '',
     })
-    const createContactForm = () => {
+    const createContactForm = async () => {
       const data = {
         url: '/contact-form',
         data: contactForm.value,
         method: 'POST',
         headers: { 'Content-type': 'application/json; charset=UTF-8' },
       }
-      service.methods.callService(data)
+      const resp = await service.methods.callService(data)
+      if (resp.name) {
+        alert('Mensaje enviado correcatmente')
+        document.getElementById('contact-form').reset()
+      }
     }
     const sendContactForm = () => {
       createContactForm()

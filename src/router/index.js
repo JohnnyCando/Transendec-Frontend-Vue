@@ -24,6 +24,48 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: 'about' */ '../views/AdminPanel.vue'),
+    children: [
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: import('../views/admin/Dashboard.vue'),
+      },
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+        path: 'service',
+        children: [
+          {
+            // UserProfile will be rendered inside User's <router-view>
+            // when /user/:id/profile is matched
+            path: 'new',
+            component: import('../views/admin/service/New.vue'),
+          },
+          {
+            // UserProfile will be rendered inside User's <router-view>
+            // when /user/:id/profile is matched
+            path: 'edit',
+            component: import('../views/admin/service/Edit.vue'),
+          },
+        ],
+      },
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+        path: 'contact',
+        children: [
+          {
+            // UserProfile will be rendered inside User's <router-view>
+            // when /user/:id/profile is matched
+            name: 'contactList',
+            path: 'list',
+            component: import('../views/admin/contact/list/List.vue'),
+          },
+        ],
+      },
+    ],
   },
   {
     path: '/services-admin',

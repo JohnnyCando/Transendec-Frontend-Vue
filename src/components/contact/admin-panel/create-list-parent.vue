@@ -1,101 +1,59 @@
 <template>
-  <form onsubmit="return false" id="contact-form">
-    <div class="contact-form form-style row">
-      <div class="col-12 col-lg-6">
-        <input
-          type="text"
-          v-model="contactForm.name"
-          placeholder="Nombre*"
-          id="fname"
-          name="name"
-        />
-        <!--<p>{error.name ? error.name : ''}</p> -->
-      </div>
-      <div class="col-12 col-lg-6">
-        <input
-          type="email"
-          v-model="contactForm.email"
-          placeholder="Correo Eelectrónico"
-          id="email"
-          name="email"
-        />
-        <!--<p>{error.name ? error.name : ''}</p> -->
-      </div>
-      <div class="col col-lg-6">
-        <input
-          type="text"
-          v-model="contactForm.number"
-          placeholder="Celular"
-          id="number"
-          name="number"
-        />
-        <!--<p>{error.name ? error.name : ''}</p> -->
-      </div>
-      <div class="col-12 col-lg-6">
-        <input
-          type="text"
-          v-model="contactForm.address"
-          placeholder="Dirección"
-          id="address"
-          name="address"
-        />
-        <!--<p>{error.name ? error.name : ''}</p> -->
-      </div>
-      <div class="col-12 col-sm-12">
-        <textarea
-          v-model="contactForm.notes"
-          class="contact-textarea"
-          placeholder="Mensaje"
-          name="notes"
-        ></textarea>
-        <!--<p>{error.name ? error.name : ''}</p> -->
-      </div>
-      <div class="col-12">
-        <button @click="sendContactForm" class="theme-btn">
-          Enviar Mensaje
-        </button>
+  <div class="contact-page-area section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-md-12">
+          <div class="contact-area contact-area-2 contact-area-3">
+            <h2>Crear Servicio</h2>
+            <createServiceForm />
+          </div>
+        </div>
       </div>
     </div>
-  </form>
+  </div>
 </template>
 
 <script>
+import createServiceForm from '.create-service'
 import { ref } from 'vue'
-import service from '@/mixins/service.js'
 export default {
-  name: 'ContactFormValuesMain',
-  mixins: [service],
+  name: 'createServiceFormMain',
+  components: {
+    createServiceForm,
+  },
   props: {
     msg: String,
   },
   setup() {
-    let contactForm = ref({
-      name: '',
-      email: '',
-      number: '',
-      address: '',
-      notes: '',
-    })
-    const createContactForm = async () => {
-      const data = {
-        url: '/contact-form',
-        data: contactForm.value,
-        method: 'POST',
-        headers: { 'Content-type': 'application/json; charset=UTF-8' },
-      }
-      const resp = await service.methods.callService(data)
-      if (resp.name) {
-        alert('Mensaje enviado correcatmente')
-        document.getElementById('contact-form').reset()
-      }
+    const getPhones = () => {
+      const phonesArray = [
+        {
+          phone: '593996603920',
+          id: 1,
+        },
+        {
+          phone: '593998356467',
+          id: 2,
+        },
+      ]
+      return phonesArray
     }
-    const sendContactForm = () => {
-      createContactForm()
+    const getAddresses = () => {
+      const aaddressesArray = [
+        {
+          name: 'Av. Universitaria y Manuel Aguirre',
+          id: 1,
+        },
+      ]
+      return aaddressesArray
     }
+    let phones = ref([])
+    let addresses = ref([])
+    phones = getPhones()
+    addresses = getAddresses()
     return {
-      contactForm,
-      sendContactForm,
-      createContactForm,
+      phones,
+      addresses,
     }
   },
 }
@@ -188,7 +146,7 @@ export default {
   background: #f5f5f5;
   height: 50px;
   padding: 6px 15px;
-  color: #212529;
+  color: #fff;
   border: 2px solid #ddd;
   border-radius: 0;
   -webkit-box-shadow: none;

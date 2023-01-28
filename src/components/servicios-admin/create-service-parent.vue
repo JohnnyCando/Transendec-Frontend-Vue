@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-7 col-md-12">
           <div class="contact-area contact-area-2 contact-area-3">
-            <h2>Crear Servicio</h2>
+            <h2>{{ title }}</h2>
             <createServiceForm />
           </div>
         </div>
@@ -24,7 +24,7 @@ export default {
   props: {
     msg: String,
   },
-  setup() {
+  async setup() {
     const getPhones = () => {
       const phonesArray = [
         {
@@ -38,6 +38,13 @@ export default {
       ]
       return phonesArray
     }
+    let getTitle = () => {
+      const data = fetch('http://localhost:3000/api/v1/titulos/2').then(
+        (result) => console.log(result),
+      )
+      console.log(data)
+      return data
+    }
     const getAddresses = () => {
       const aaddressesArray = [
         {
@@ -47,13 +54,17 @@ export default {
       ]
       return aaddressesArray
     }
+    let title = ref({})
     let phones = ref([])
     let addresses = ref([])
+    console.log(getTitle())
     phones = getPhones()
     addresses = getAddresses()
+    title = getTitle()
     return {
       phones,
       addresses,
+      title,
     }
   },
 }
@@ -146,7 +157,7 @@ export default {
   background: #f5f5f5;
   height: 50px;
   padding: 6px 15px;
-  color: #fff;
+  color: rgb(8, 8, 8);
   border: 2px solid #ddd;
   border-radius: 0;
   -webkit-box-shadow: none;

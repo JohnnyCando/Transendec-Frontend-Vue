@@ -9,45 +9,64 @@
 <script>
 // @ is an alias to /src
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default {
   name: 'sideBar',
   setup() {
+    const router = useRouter()
     let menu = ref([
       {
         header: 'Transendec Administrador',
         hiddenOnCollapse: true,
       },
       {
-        href: '/adminpanel',
+        to: '/adminpanel/dashboard',
         title: 'Dashboard',
-        icon: 'fa fa-user',
+        icon: 'fa fa-th-large',
       },
       {
-        href: '/adminpanel',
         title: 'Servicios',
-        icon: 'fa fa-chart-area',
+        icon: 'fa fa-tasks',
         child: [
           {
-            href: '/adminpanel',
+            to: '/adminpanel/service/new',
             title: 'Crear Servicio',
+          },
+          {
+            to: '/adminpanel/service/edit',
+            title: 'Editar Servicio',
           },
         ],
       },
       {
-        href: '/adminpanel',
+        to: '/adminpanel/contact/list',
+        title: 'Contact',
+        icon: 'fa fa-user',
+      },
+      {
+        to: '/adminpanel',
         title: 'Teléfono y Direcciones',
         icon: 'fa fa-phone',
         child: [
           {
-            href: '/adminpanel',
+            to: '/adminpanel',
             title: 'Crear Telefono',
           },
         ],
       },
     ])
+    const onItemClick = (event, item) => {
+      if (event) {
+        if (!item.child && item.to) {
+          router.push(item.to)
+        }
+      }
+    }
+    router.push('/adminpanel/dashboard')
     return {
       menu,
+      onItemClick,
     }
   },
 }

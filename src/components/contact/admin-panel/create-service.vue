@@ -1,11 +1,11 @@
 <template>
-  <form onsubmit="return false">
+  <form>
     <div class="contact-form form-style row">
       <div class="col-12 col-lg-6">
         <input
           type="text"
-          v-model="contactForm.name"
-          placeholder="Nombre*"
+          v-model="serviceForm.name"
+          placeholder="Nombre del servicio*"
           id="fname"
           name="name"
         />
@@ -13,46 +13,26 @@
       </div>
       <div class="col-12 col-lg-6">
         <input
-          type="email"
-          v-model="contactForm.email"
-          placeholder="Correo Eelectrónico"
-          id="email"
-          name="email"
-        />
-        <!--<p>{error.name ? error.name : ''}</p> -->
-      </div>
-      <div class="col col-lg-6">
-        <input
-          type="text"
-          v-model="contactForm.number"
-          placeholder="Celular"
-          id="number"
-          name="number"
-        />
-        <!--<p>{error.name ? error.name : ''}</p> -->
-      </div>
-      <div class="col-12 col-lg-6">
-        <input
-          type="text"
-          v-model="contactForm.address"
-          placeholder="Dirección"
-          id="address"
-          name="address"
+          type="number"
+          v-model="serviceForm.price"
+          placeholder="Precio"
+          id="price"
+          name="price"
         />
         <!--<p>{error.name ? error.name : ''}</p> -->
       </div>
       <div class="col-12 col-sm-12">
         <textarea
-          v-model="contactForm.notes"
+          v-model="serviceForm.description"
           class="contact-textarea"
-          placeholder="Mensaje"
-          name="notes"
+          placeholder="Descripción"
+          name="description"
         ></textarea>
         <!--<p>{error.name ? error.name : ''}</p> -->
       </div>
       <div class="col-12">
         <button @click="sendContactForm" class="theme-btn">
-          Enviar Mensaje
+          Crear Servicio
         </button>
       </div>
     </div>
@@ -61,35 +41,33 @@
 
 <script>
 import { ref } from 'vue'
-import service from '@/mixins/service.js'
 export default {
-  name: 'ContactFormValuesMain',
-  mixins: [service],
+  name: 'createServiceForm',
   props: {
     msg: String,
   },
   setup() {
-    let contactForm = ref({
+    let serviceForm = ref({
       name: '',
-      email: '',
-      number: '',
-      address: '',
-      notes: '',
+      price: '',
+      description: '',
     })
     const createContactForm = () => {
-      const data = {
-        url: '/contact-form',
-        data: contactForm.value,
+      fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
+        body: JSON.stringify(serviceForm.value),
         headers: { 'Content-type': 'application/json; charset=UTF-8' },
-      }
-      service.methods.callService(data)
+      })
+        .then((response) => response.json())
+        .then((json) => console.log(json))
+        .catch((err) => console.log(err))
     }
     const sendContactForm = () => {
-      createContactForm()
+      console.log(serviceForm.value)
+      alert('Form enviado ' + serviceForm.value)
     }
     return {
-      contactForm,
+      serviceForm,
       sendContactForm,
       createContactForm,
     }

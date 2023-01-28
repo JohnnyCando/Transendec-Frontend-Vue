@@ -96,7 +96,7 @@ export default {
   },
 }
 </script>
-<style>
+<style scoped>
 .contact-page-area .contact-map {
   height: 450px;
   margin-top: 100px;

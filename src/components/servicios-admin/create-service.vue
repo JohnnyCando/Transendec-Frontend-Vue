@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form onsubmit="return false" id="contact-form">
     <div class="contact-form form-style row">
       <div class="col-12 col-lg-6">
         <input
@@ -18,6 +18,7 @@
           placeholder="Precio"
           id="price"
           name="price"
+          min="0"
         />
         <!--<p>{error.name ? error.name : ''}</p> -->
       </div>
@@ -41,8 +42,10 @@
 
 <script>
 import { ref } from 'vue'
+import service from '@/mixins/service.js'
 export default {
   name: 'createServiceForm',
+  mixins: [service],
   props: {
     msg: String,
   },
@@ -52,19 +55,21 @@ export default {
       price: '',
       description: '',
     })
-    const createContactForm = () => {
-      fetch('https://jsonplaceholder.typicode.com/posts', {
+    const createContactForm = async () => {
+      const data = {
+        url: '/contact-form',
+        data: serviceForm.value,
         method: 'POST',
-        body: JSON.stringify(serviceForm.value),
         headers: { 'Content-type': 'application/json; charset=UTF-8' },
-      })
-        .then((response) => response.json())
-        .then((json) => console.log(json))
-        .catch((err) => console.log(err))
+      }
+      const resp = await service.methods.callService(data)
+      if (resp.name) {
+        alert('Mensaje enviado correcatmente')
+        document.getElementById('contact-form').reset()
+      }
     }
     const sendContactForm = () => {
-      console.log(serviceForm.value)
-      alert('Form enviado ' + serviceForm.value)
+      createContactForm()
     }
     return {
       serviceForm,

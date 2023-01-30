@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-7 col-md-12">
           <div class="contact-area contact-area-2 contact-area-3">
-            <h2>{{ title }}</h2>
+            <h2>Crear Servicio</h2>
             <createServiceForm />
           </div>
         </div>
@@ -15,7 +15,6 @@
 
 <script>
 import createServiceForm from '@/components/servicios-admin/create-service'
-import { ref } from 'vue'
 export default {
   name: 'createServiceFormMain',
   components: {
@@ -23,49 +22,6 @@ export default {
   },
   props: {
     msg: String,
-  },
-  async setup() {
-    const getPhones = () => {
-      const phonesArray = [
-        {
-          phone: '593996603920',
-          id: 1,
-        },
-        {
-          phone: '593998356467',
-          id: 2,
-        },
-      ]
-      return phonesArray
-    }
-    let getTitle = () => {
-      const data = fetch('http://localhost:3000/api/v1/titulos/2').then(
-        (result) => console.log(result),
-      )
-      console.log(data)
-      return data
-    }
-    const getAddresses = () => {
-      const aaddressesArray = [
-        {
-          name: 'Av. Universitaria y Manuel Aguirre',
-          id: 1,
-        },
-      ]
-      return aaddressesArray
-    }
-    let title = ref({})
-    let phones = ref([])
-    let addresses = ref([])
-    console.log(getTitle())
-    phones = getPhones()
-    addresses = getAddresses()
-    title = getTitle()
-    return {
-      phones,
-      addresses,
-      title,
-    }
   },
 }
 </script>

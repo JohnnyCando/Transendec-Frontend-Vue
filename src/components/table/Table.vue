@@ -1,5 +1,5 @@
 <template>
-  <table class="table">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -16,23 +16,50 @@
         <td>{{ item.address }}</td>
         <td>{{ item.phone }}</td>
         <td>{{ item.createdAt }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#modalContacto"
+            @click="openModal(item)"
+          >
+            <i class="fa fa-eye"></i>
+          </button>
+          <!-- <button type="button" class="btn btn-success">
+            <i class="fa fa-edit"></i>
+          </button> -->
+          <button type="button" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>
+  <modal title="Contactado por" :contact="objModal" id="modalContacto"></modal>
 </template>
 
 <script>
-// import createServiceFormMain from '@/components/contact/admin-panel/create-service-parent'
+import modal from '@/components/modal/Modal'
+import { ref } from 'vue'
 export default {
   name: 'serviceEdit',
-  components: {},
+  components: { modal },
   props: {
     header: Array,
     list: Array,
   },
+  setup() {
+    let objModal = ref({})
+    const openModal = (item) => {
+      objModal.value = item
+      console.log(item)
+    }
+    return { objModal, openModal }
+  },
 }
 </script>
-<style>
+<style lang="scss">
 .parentPage {
   display: flex;
 }
@@ -40,5 +67,11 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
+}
+
+.table {
+  .btn {
+    margin-left: 1rem;
+  }
 }
 </style>

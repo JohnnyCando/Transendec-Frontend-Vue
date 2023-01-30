@@ -24,10 +24,10 @@
       <div class="col col-lg-6">
         <input
           type="text"
-          v-model="contactForm.number"
+          v-model="contactForm.phone"
           placeholder="Celular"
-          id="number"
-          name="number"
+          id="phone"
+          name="phone"
         />
         <!--<p>{error.name ? error.name : ''}</p> -->
       </div>
@@ -43,10 +43,10 @@
       </div>
       <div class="col-12 col-sm-12">
         <textarea
-          v-model="contactForm.notes"
+          v-model="contactForm.message"
           class="contact-textarea"
           placeholder="Mensaje"
-          name="notes"
+          name="message"
         ></textarea>
         <!--<p>{error.name ? error.name : ''}</p> -->
       </div>
@@ -72,9 +72,9 @@ export default {
     let contactForm = ref({
       name: '',
       email: '',
-      number: '',
+      phone: '',
       address: '',
-      notes: '',
+      message: '',
     })
     const createContactForm = async () => {
       const data = {

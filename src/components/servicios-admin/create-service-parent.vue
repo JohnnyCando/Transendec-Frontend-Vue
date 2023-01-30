@@ -15,7 +15,6 @@
 
 <script>
 import createServiceForm from '@/components/servicios-admin/create-service'
-import { ref } from 'vue'
 export default {
   name: 'createServiceFormMain',
   components: {
@@ -23,38 +22,6 @@ export default {
   },
   props: {
     msg: String,
-  },
-  setup() {
-    const getPhones = () => {
-      const phonesArray = [
-        {
-          phone: '593996603920',
-          id: 1,
-        },
-        {
-          phone: '593998356467',
-          id: 2,
-        },
-      ]
-      return phonesArray
-    }
-    const getAddresses = () => {
-      const aaddressesArray = [
-        {
-          name: 'Av. Universitaria y Manuel Aguirre',
-          id: 1,
-        },
-      ]
-      return aaddressesArray
-    }
-    let phones = ref([])
-    let addresses = ref([])
-    phones = getPhones()
-    addresses = getAddresses()
-    return {
-      phones,
-      addresses,
-    }
   },
 }
 </script>
@@ -146,7 +113,7 @@ export default {
   background: #f5f5f5;
   height: 50px;
   padding: 6px 15px;
-  color: #fff;
+  color: rgb(8, 8, 8);
   border: 2px solid #ddd;
   border-radius: 0;
   -webkit-box-shadow: none;

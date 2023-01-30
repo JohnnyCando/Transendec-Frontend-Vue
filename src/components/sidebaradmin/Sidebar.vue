@@ -30,12 +30,12 @@ export default {
         icon: 'fa fa-tasks',
         child: [
           {
-            to: '/adminpanel/service/new',
-            title: 'Crear Servicio',
+            to: '/adminpanel/service/list',
+            title: 'Lista de Servicios',
           },
           {
-            to: '/adminpanel/service/edit',
-            title: 'Editar Servicio',
+            to: '/adminpanel/service/new',
+            title: 'Crear Servicio',
           },
         ],
       },

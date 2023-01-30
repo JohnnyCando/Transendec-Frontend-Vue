@@ -1,6 +1,6 @@
 <template>
   <div class="section-padding">
-    <h2>Listado de contactos</h2>
+    <h2>Listado de servicios</h2>
     <tableMain :header="header" :list="list"></tableMain>
   </div>
 </template>
@@ -8,7 +8,7 @@
 <script>
 // @ is an alias to /src
 import { ref } from 'vue'
-import tableMain from '@/components/admin/contact-form/table/Table'
+import tableMain from '@/components/admin/service/table/Table'
 import service from '@/mixins/service.js'
 
 export default {
@@ -18,17 +18,11 @@ export default {
   },
   mixins: [service],
   setup() {
-    const header = ref([
-      'Nombre',
-      'Email',
-      'Dirección',
-      'Teléfono',
-      'Fecha de creación',
-    ])
+    const header = ref(['Nombre', 'Precio', 'Descripción'])
     let list = ref([])
     const getListContact = async () => {
       const data = {
-        url: '/contact-form',
+        url: '/services',
         method: 'GET',
         headers: { 'Content-type': 'application/json; charset=UTF-8' },
       }

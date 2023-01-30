@@ -46,8 +46,8 @@ const routes = [
           {
             // UserProfile will be rendered inside User's <router-view>
             // when /user/:id/profile is matched
-            path: 'edit',
-            component: import('../views/admin/service/Edit.vue'),
+            path: 'list',
+            component: import('../views/admin/service/List.vue'),
           },
         ],
       },

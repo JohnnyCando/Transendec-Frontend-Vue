@@ -11,16 +11,11 @@
                 {{ address.name }}
               </span>
             </div>
-            <div class="phone">
+            <div class="phone" v-if="celArray.length > 0">
               <h3>Teléfonos</h3>
               <h5>Celulares</h5>
-              <a
-                :key="phone"
-                v-for="phone in phones"
-                target="_blank"
-                :href="`https://api.whatsapp.com/send?phone=${phone.phone}`"
-              >
-                <span>+ {{ phone.phone }}</span>
+              <a :key="item" v-for="item in celArray" target="_blank">
+                <span>+ {{ item }}</span>
               </a>
               <h4>Fíjo</h4>
             </div>
@@ -54,44 +49,51 @@
 <script>
 import contactFormValuesMain from '@/components/contact/ContactFormValues'
 import { ref } from 'vue'
+import service from '@/mixins/service.js'
 export default {
   name: 'contactFormMain',
   components: {
     contactFormValuesMain,
   },
+  mixins: [service],
   props: {
     msg: String,
   },
   setup() {
-    const getPhones = () => {
-      const phonesArray = [
-        {
-          phone: '593996603920',
-          id: 1,
-        },
-        {
-          phone: '593998356467',
-          id: 2,
-        },
-      ]
-      return phonesArray
+    let celArray = ref([])
+    const fijArray = ref([])
+    const getPhones = async () => {
+      const data = {
+        url: '/phones',
+        method: 'GET',
+        headers: { 'Content-type': 'application/json; charset=UTF-8' },
+      }
+      const resp = await service.methods.callService(data)
+      if (resp.length > 0) {
+        celArray.value = resp.map((item) => {
+          if (item.category === 'C' && item.typeClient === 'A') {
+            return item
+          }
+        })
+        console.log(celArray.value)
+      }
     }
-    const getAddresses = () => {
-      const aaddressesArray = [
-        {
-          name: 'Av. Universitaria y Manuel Aguirre',
-          id: 1,
-        },
-      ]
-      return aaddressesArray
+    const getAddress = async () => {
+      const data = {
+        url: '/address',
+        method: 'GET',
+        headers: { 'Content-type': 'application/json; charset=UTF-8' },
+      }
+      const resp = await service.methods.callService(data)
+      if (resp.length > 0) {
+        console.log(resp)
+      }
     }
-    let phones = ref([])
-    let addresses = ref([])
-    phones = getPhones()
-    addresses = getAddresses()
+    getPhones()
+    getAddress()
     return {
-      phones,
-      addresses,
+      celArray,
+      fijArray,
     }
   },
 }

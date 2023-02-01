@@ -53,7 +53,6 @@ export default {
     let objModal = ref({})
     const openModal = (item) => {
       objModal.value = item
-      console.log(item)
     }
     return { objModal, openModal }
   },

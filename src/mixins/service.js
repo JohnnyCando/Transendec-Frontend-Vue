@@ -28,7 +28,6 @@ export default {
           options.body = JSON.stringify(api.data)
           break
       }
-      console.log(options)
       const resp = await fetch(process.env.VUE_APP_API + api.url, options)
       return resp.json()
     },

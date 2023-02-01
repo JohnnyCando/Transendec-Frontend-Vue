@@ -75,7 +75,6 @@ export default {
             return item
           }
         })
-        console.log(celArray.value)
       }
     }
     const getAddress = async () => {
@@ -85,9 +84,7 @@ export default {
         headers: { 'Content-type': 'application/json; charset=UTF-8' },
       }
       const resp = await service.methods.callService(data)
-      if (resp.length > 0) {
-        console.log(resp)
-      }
+      return resp
     }
     getPhones()
     getAddress()

@@ -27,7 +27,6 @@ export default {
         headers: { 'Content-type': 'application/json; charset=UTF-8' },
       }
       const resp = await service.methods.callService(data)
-      console.log(resp)
       if (resp.length > 0) list.value = resp
     }
     getListContact()

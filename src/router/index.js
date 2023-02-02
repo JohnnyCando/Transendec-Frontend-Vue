@@ -14,7 +14,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: 'about' */ '../views/AboutView.vue'),
+      import(/* webpackChunkName: 'about' */ '@/views/AboutView.vue'),
   },
   {
     path: '/adminpanel',
@@ -23,14 +23,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: 'about' */ '../views/AdminPanel.vue'),
+      import(/* webpackChunkName: 'about' */ '@/views/AdminPanel.vue'),
     children: [
       {
         // UserProfile will be rendered inside User's <router-view>
         // when /user/:id/profile is matched
         path: 'dashboard',
         name: 'Dashboard',
-        component: import('../views/admin/Dashboard.vue'),
+        component: () => import('@/views/admin/Dashboard.vue'),
       },
       {
         // UserProfile will be rendered inside User's <router-view>
@@ -41,13 +41,13 @@ const routes = [
             // UserProfile will be rendered inside User's <router-view>
             // when /user/:id/profile is matched
             path: 'new',
-            component: import('../views/admin/service/New.vue'),
+            component: () => import('../views/admin/service/New.vue'),
           },
           {
             // UserProfile will be rendered inside User's <router-view>
             // when /user/:id/profile is matched
             path: 'list',
-            component: import('../views/admin/service/List.vue'),
+            component: () => import('../views/admin/service/List.vue'),
           },
         ],
       },
@@ -61,20 +61,11 @@ const routes = [
             // when /user/:id/profile is matched
             name: 'contactList',
             path: 'list',
-            component: import('../views/admin/contact/list/List.vue'),
+            component: () => import('../views/admin/contact/list/List.vue'),
           },
         ],
       },
     ],
-  },
-  {
-    path: '/services-admin',
-    name: 'servicesAdmin',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: 'about' */ '../views/AdminPanel.vue'),
   },
   {
     path: '/contact',
@@ -92,7 +83,7 @@ const routes = [
         // UserProfile will be rendered inside User's <router-view>
         // when /user/:id/profile is matched
         path: ':id',
-        component: import('../views/Service.vue'),
+        component: () => import('../views/Service.vue'),
       },
     ],
   },

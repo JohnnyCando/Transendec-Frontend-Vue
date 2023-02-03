@@ -45,31 +45,29 @@ export default {
         icon: 'fa fa-user',
       },
       {
-        to: '/adminpanel',
         title: 'Teléfonos',
         icon: 'fa fa-phone',
         child: [
           {
-            to: '/adminpanel',
+            to: '/adminpanel/phones/list',
             title: 'Listar Telefonos',
           },
           {
-            to: '/adminpanel',
+            to: '/adminpanel/phones/New',
             title: 'Crear Telefono',
           },
         ],
       },
       {
-        to: '/adminpanel',
         title: 'Direcciones',
         icon: 'fa fa-map-marker',
         child: [
           {
-            to: '/adminpanel',
+            to: '/adminpanel/address/list',
             title: 'Listar Direcciones',
           },
           {
-            to: '/adminpanel',
+            to: '/adminpanel/address/list',
             title: 'Crear Dirección',
           },
         ],

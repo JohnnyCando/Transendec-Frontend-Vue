@@ -54,6 +54,44 @@ const routes = [
       {
         // UserProfile will be rendered inside User's <router-view>
         // when /user/:id/profile is matched
+        path: 'phones',
+        children: [
+          {
+            // UserProfile will be rendered inside User's <router-view>
+            // when /user/:id/profile is matched
+            path: 'new',
+            component: () => import('../views/admin/phone/New.vue'),
+          },
+          {
+            // UserProfile will be rendered inside User's <router-view>
+            // when /user/:id/profile is matched
+            path: 'list',
+            component: () => import('../views/admin/phone/List.vue'),
+          },
+        ],
+      },
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
+        path: 'address',
+        children: [
+          {
+            // UserProfile will be rendered inside User's <router-view>
+            // when /user/:id/profile is matched
+            path: 'new',
+            component: () => import('../views/admin/address/New.vue'),
+          },
+          {
+            // UserProfile will be rendered inside User's <router-view>
+            // when /user/:id/profile is matched
+            path: 'list',
+            component: () => import('../views/admin/address/List.vue'),
+          },
+        ],
+      },
+      {
+        // UserProfile will be rendered inside User's <router-view>
+        // when /user/:id/profile is matched
         path: 'contact',
         children: [
           {

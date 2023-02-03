@@ -4,4 +4,7 @@ module.exports = defineConfig({
   configureWebpack: {
     devtool: 'source-map',
   },
+  chainWebpack: (config) => {
+    config.performance.maxEntrypointSize(1512000).maxAssetSize(1512000)
+  },
 })

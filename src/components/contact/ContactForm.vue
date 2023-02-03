@@ -86,7 +86,6 @@ export default {
       }
       const resp = await service.methods.callService(data)
       if (resp.length > 0) {
-        debugger
         celArray.value = resp.filter(
           (item) => item.category === 'C' && item.typeClient === 'A',
         )

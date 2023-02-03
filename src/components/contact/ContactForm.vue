@@ -8,16 +8,31 @@
             <div class="adress">
               <h3>Direcciones</h3>
               <span :key="address" v-for="address in addresses">
-                {{ address.name }}
+                <i class="fa fa-map-marker"></i>
+                {{ address.address }}
               </span>
             </div>
             <div class="phone" v-if="celArray.length > 0">
               <h3>Teléfonos</h3>
               <h5>Celulares</h5>
-              <a :key="item" v-for="item in celArray" target="_blank">
-                <span>+ {{ item }}</span>
+              <a
+                :key="item"
+                v-for="item in celArray"
+                target="_blank"
+                :href="`https://api.whatsapp.com/send?phone=+${item.phone}&text=Buenos días, me interesan sus servicios!`"
+              >
+                <span>
+                  <i class="fa fa-mobile"></i>
+                  +{{ item.phone }}
+                </span>
               </a>
               <h4>Fíjo</h4>
+              <a :key="item" v-for="item in fijArray" target="_blank">
+                <span>
+                  <i class="fa fa-phone"></i>
+                  {{ item.phone }}
+                </span>
+              </a>
             </div>
             <div class="email">
               <h3>Email</h3>
@@ -62,6 +77,7 @@ export default {
   setup() {
     let celArray = ref([])
     const fijArray = ref([])
+    const addresses = ref([])
     const getPhones = async () => {
       const data = {
         url: '/phones',
@@ -70,12 +86,13 @@ export default {
       }
       const resp = await service.methods.callService(data)
       if (resp.length > 0) {
-        celArray.value = resp.map((item) => {
-          if (item.category === 'C' && item.typeClient === 'A') {
-            return item
-          }
-        })
-        console.log(celArray.value)
+        debugger
+        celArray.value = resp.filter(
+          (item) => item.category === 'C' && item.typeClient === 'A',
+        )
+        fijArray.value = resp.filter(
+          (item) => item.category === 'F' && item.typeClient === 'A',
+        )
       }
     }
     const getAddress = async () => {
@@ -86,7 +103,7 @@ export default {
       }
       const resp = await service.methods.callService(data)
       if (resp.length > 0) {
-        console.log(resp)
+        addresses.value = resp.filter((item) => item.type === 'A')
       }
     }
     getPhones()
@@ -94,6 +111,7 @@ export default {
     return {
       celArray,
       fijArray,
+      addresses,
     }
   },
 }

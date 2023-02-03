@@ -46,12 +46,31 @@ export default {
       },
       {
         to: '/adminpanel',
-        title: 'Teléfono y Direcciones',
+        title: 'Teléfonos',
         icon: 'fa fa-phone',
         child: [
           {
             to: '/adminpanel',
+            title: 'Listar Telefonos',
+          },
+          {
+            to: '/adminpanel',
             title: 'Crear Telefono',
+          },
+        ],
+      },
+      {
+        to: '/adminpanel',
+        title: 'Direcciones',
+        icon: 'fa fa-map-marker',
+        child: [
+          {
+            to: '/adminpanel',
+            title: 'Listar Direcciones',
+          },
+          {
+            to: '/adminpanel',
+            title: 'Crear Dirección',
           },
         ],
       },

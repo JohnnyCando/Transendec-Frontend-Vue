@@ -67,7 +67,7 @@ export default {
             title: 'Listar Direcciones',
           },
           {
-            to: '/adminpanel/address/list',
+            to: '/adminpanel/address/new',
             title: 'Crear Dirección',
           },
         ],

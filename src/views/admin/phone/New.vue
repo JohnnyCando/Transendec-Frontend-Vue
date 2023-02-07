@@ -1,13 +1,13 @@
 <template>
-  <createServiceFormMain />
+  <createPhone />
 </template>
 
 <script>
-import createServiceFormMain from '@/components/servicios-admin/create-service-parent'
+import createPhone from '@/components/admin/phone/form/createPhone'
 export default {
   name: 'serviceNew',
   components: {
-    createServiceFormMain,
+    createPhone,
   },
 }
 </script>

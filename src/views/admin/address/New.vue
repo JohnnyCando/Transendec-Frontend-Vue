@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import createServiceFormMain from '@/components/servicios-admin/create-service-parent'
+import createServiceFormMain from '@/components/admin/address/form/createAddress.vue'
 export default {
   name: 'serviceNew',
   components: {

@@ -36,8 +36,6 @@ export default {
       userId: '1',
     })
     const createContactForm = async () => {
-      console.log(addressForm.value)
-      debugger
       const data = {
         url: '/address',
         data: addressForm.value,

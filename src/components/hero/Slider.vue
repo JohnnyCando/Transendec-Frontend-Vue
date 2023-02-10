@@ -115,6 +115,7 @@ export default {
 .hero-style-1 .slide-caption {
   z-index: 19;
   padding-bottom: 20px;
+  text-align: left;
 }
 
 .hero .slide {

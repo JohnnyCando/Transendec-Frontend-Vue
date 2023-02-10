@@ -38,7 +38,10 @@
                 <div className="category-section">
                   <ul>
                     <li :key="service" v-for="service in servicesArray">
-                      <router-link :to="`/service/${service.id}`">
+                      <router-link
+                        :to="`/service/${service.id}`"
+                        @click="topPage"
+                      >
                         {{ service.name }}
                       </router-link>
                     </li>
@@ -95,11 +98,15 @@ export default {
   setup() {
     const store = useStore()
     const servicesArray = computed(() => store.state.services.services)
+    const topPage = () => {
+      document.body.scrollTop = 0 // For Safari
+      document.documentElement.scrollTop = 0
+    }
     const p1 = ref(`We Provide you the best service in the world.
     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more - or - less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.`)
     const p2 = ref(`We Provide you the best service in the world.
     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.`)
-    return { p1, p2, servicesArray }
+    return { p1, p2, servicesArray, topPage }
   },
 }
 </script>

@@ -1,41 +1,41 @@
 <template>
-  <div className="Freight-area">
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-3 col-md-12">
-          <div className="row">
-            <div className="col-lg-12 col-md-6">
-              <div className="contact-us-area">
+  <div class="Freight-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-12">
+          <div class="row">
+            <div class="col-lg-12 col-md-6">
+              <div class="contact-us-area">
                 <h3>Contuct Us</h3>
-                <div className="contact-s">
+                <div class="contact-s">
                   <span>
-                    <i className="fa fa-phone" aria-hidden="true"></i>
+                    <i class="fa fa-phone" aria-hidden="true"></i>
                     Call Us
                   </span>
                   <p>Tel: +555 965 325</p>
                 </div>
-                <div className="contact-s">
+                <div class="contact-s">
                   <span>
-                    <i className="fa fa-envelope-o" aria-hidden="true"></i>
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
                     Email Us
                   </span>
                   <p>youremail@gmail.com</p>
                 </div>
-                <div className="contact-s">
+                <div class="contact-s">
                   <span>
-                    <i className="fa fa-map-marker" aria-hidden="true"></i>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
                     Our Location
                   </span>
                   <p>123 Banena Street, London</p>
                 </div>
               </div>
             </div>
-            <div className="col-lg-12 col-md-6">
-              <div className="catagory-item">
-                <div className="widget-title">
-                  <h3 className="text-left">Our Services</h3>
+            <div class="col-lg-12 col-md-6">
+              <div class="catagory-item">
+                <div class="widget-title">
+                  <h3 class="text-left">Nuestros servicios</h3>
                 </div>
-                <div className="category-section">
+                <div class="category-section">
                   <ul>
                     <li :key="service" v-for="service in servicesArray">
                       <router-link
@@ -51,17 +51,17 @@
             </div>
           </div>
         </div>
-        <div className="col-lg-9">
-          <div className="Freight-item">
+        <div class="col-lg-9">
+          <div class="Freight-item">
             <h3>{{ data.name }}</h3>
             <p>{{ p1 }}.</p>
             <img src="@/assets/images/air/1.jpg" alt="" />
             <p>{{ p2 }}</p>
-            <div className="Freight-s">
-              <div className="Freight-img">
+            <div class="Freight-s">
+              <div class="Freight-img">
                 <img src="@/assets/images/air/2.jpg" alt="" />
               </div>
-              <div className="f-s">
+              <div class="f-s">
                 <span>
                   Ipsum is that it has a more-or-less normal distribution
                 </span>

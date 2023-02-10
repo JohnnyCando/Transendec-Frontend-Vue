@@ -104,7 +104,7 @@ export default {
   left: 0;
   top: 0;
   background: #000;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 .slide-caption {

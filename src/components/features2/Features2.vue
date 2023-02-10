@@ -2,33 +2,27 @@
   <div class="wpo-section-style-2">
     <div class="container">
       <div class="row">
-        <div class="col-lg-4 col-md-6 col-sm-12 col-d">
+        <div
+          :key="service"
+          v-for="service in servicesArray"
+          :class="`${servicesArray.length == 2 ? 'col-lg-6' : 'col-lg-4'}`"
+          class="col-md-6 col-sm-12 col-d"
+        >
           <div class="wpo-section-item-2">
             <div class="wpo-section-icon">
               <i class="fi flaticon-truck"></i>
             </div>
             <div class="wpo-section-content">
               <p>
-                <router-link to="/ocean">Montacargas</router-link>
+                <router-link :to="`/service/${service.id}`">
+                  {{ service.name }}
+                </router-link>
               </p>
-              <span>Calidad 100% Garantizada en el servicio.</span>
+              <span>{{ service.description }}</span>
             </div>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 col-sm-12 col-d"></div>
-        <div class="col-lg-4 col-md-6 col-sm-12 col-d">
-          <div class="wpo-section-item-2">
-            <div class="wpo-section-icon">
-              <i class="fi flaticon-truck"></i>
-            </div>
-            <div class="wpo-section-content">
-              <p>
-                <router-link to="/road">Transporte</router-link>
-              </p>
-              <span>Calidad 100% Garantizada en el servicio.</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -36,8 +30,59 @@
 
 <script>
 // @ is an alias to /src
+import { ref } from 'vue'
+import service from '@/mixins/service.js'
+import { useStore } from 'vuex'
+
 export default {
   name: 'features2Main',
+  mixins: [service],
+  setup() {
+    const store = useStore()
+    let servicesArray = ref([])
+    const getServices = async () => {
+      const data = {
+        url: '/services',
+        method: 'GET',
+        headers: { 'Content-type': 'application/json; charset=UTF-8' },
+      }
+      const resp = await service.methods.callService(data)
+      console.log(resp)
+      if (resp.length > 0) {
+        servicesArray.value = resp
+        store.commit('SET_SERVICES', resp)
+      }
+    }
+    const topPage = () => {
+      document.body.scrollTop = 0 // For Safari
+      document.documentElement.scrollTop = 0
+    }
+    const getArticles = () => {
+      const articlesArray = [
+        {
+          name: 'Blog full width',
+          id: 1,
+        },
+        {
+          name: 'Blog single sidebar',
+          id: 2,
+        },
+        {
+          name: 'Blog single fullwidth',
+          id: 3,
+        },
+      ]
+      return articlesArray
+    }
+    let articles = ref([])
+    getServices()
+    articles = getArticles()
+    return {
+      servicesArray,
+      articles,
+      topPage,
+    }
+  },
 }
 </script>
 <style>

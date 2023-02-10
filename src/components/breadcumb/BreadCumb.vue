@@ -33,8 +33,7 @@ export default {
 </script>
 <style>
 .breadcumb-area {
-  background: url('@/assets/images/breadcumb/bg.jpg') no-repeat center top /
-    cover;
+  background: url('@/assets/images/breadcumb/bg.jpg') no-repeat center/cover;
   min-height: 550px;
   position: relative;
   display: flex;
@@ -50,7 +49,7 @@ export default {
   left: 0;
   top: 0;
   background: #000;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .breadcumb-wrap h2 {

@@ -51,8 +51,13 @@
         <div class="col col-xs-12">
           <div class="contact-map">
             <iframe
-              title="db"
-              src="https://goo.gl/maps/G76xnQ85cFDBEg6X9"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7904805916696!2d-78.38432884918807!3d-0.21403953545705193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d593fdb7ec796b%3A0x458a53dd51c0fb6e!2sPje.%20B%20%26%20Av.%20Universitaria%2C%20Quito%20170184%2C%20Ecuador!5e0!3m2!1ses!2ses!4v1676073175955!5m2!1ses!2ses"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>

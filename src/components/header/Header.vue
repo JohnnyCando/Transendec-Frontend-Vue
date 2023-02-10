@@ -45,24 +45,18 @@
                     <span>Servicios</span>
                     <ul class="submenu">
                       <li :key="service" v-for="service in servicesArray">
-                        <router-link :to="`/service/${service.id}`">
+                        <router-link
+                          :to="`/service/${service.id}`"
+                          @click="topPage"
+                        >
                           {{ service.name }}
                         </router-link>
                       </li>
                     </ul>
                   </li>
-                  <li>
+                  <!--<li>
                     <router-link to="/articles">Articulos</router-link>
-                  </li>
-                  <li>
-                    <router-link to="/">Paginas</router-link>
-                    <ul class="submenu">
-                      <li>
-                        <router-link to="/pricing">pricing table</router-link>
-                      </li>
-                      <li><router-link to="/team">Team</router-link></li>
-                    </ul>
-                  </li>
+                  </li> -->
                   <li><router-link to="/contact">Contactanos</router-link></li>
                 </ul>
               </nav>
@@ -118,6 +112,10 @@ export default {
         store.commit('SET_SERVICES', resp)
       }
     }
+    const topPage = () => {
+      document.body.scrollTop = 0 // For Safari
+      document.documentElement.scrollTop = 0
+    }
     const getArticles = () => {
       const articlesArray = [
         {
@@ -141,6 +139,7 @@ export default {
     return {
       servicesArray,
       articles,
+      topPage,
     }
   },
 }

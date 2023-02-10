@@ -37,22 +37,10 @@
                 </div>
                 <div className="category-section">
                   <ul>
-                    <li>
-                      <router-link to="/">Ocean Freight</router-link>
-                    </li>
-                    <li>
-                      <router-link to="/">Land Freight</router-link>
-                    </li>
-                    <li>
-                      <router-link to="/">Air Freight</router-link>
-                    </li>
-                    <li>
-                      <router-link to="/">
-                        Packeging & Transpotation
+                    <li :key="service" v-for="service in servicesArray">
+                      <router-link :to="`/service/${service.id}`">
+                        {{ service.name }}
                       </router-link>
-                    </li>
-                    <li>
-                      <router-link to="/">Cargo Transpotation</router-link>
                     </li>
                   </ul>
                 </div>
@@ -94,7 +82,8 @@
 
 <script>
 // @ is an alias to /src
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   name: 'TransportAir',
@@ -104,11 +93,13 @@ export default {
     data: Object,
   },
   setup() {
+    const store = useStore()
+    const servicesArray = computed(() => store.state.services.services)
     const p1 = ref(`We Provide you the best service in the world.
     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.The point of using Lorem Ipsum is that it has a more - or - less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.`)
     const p2 = ref(`We Provide you the best service in the world.
     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.`)
-    return { p1, p2 }
+    return { p1, p2, servicesArray }
   },
 }
 </script>

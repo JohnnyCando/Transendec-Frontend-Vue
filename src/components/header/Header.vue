@@ -95,6 +95,8 @@
 <script>
 import { ref } from 'vue'
 import service from '@/mixins/service.js'
+import { useStore } from 'vuex'
+
 export default {
   name: 'HeaderMain',
   props: {
@@ -102,6 +104,7 @@ export default {
   },
   mixins: [service],
   setup() {
+    const store = useStore()
     let servicesArray = ref([])
     const getServices = async () => {
       const data = {
@@ -110,7 +113,10 @@ export default {
         headers: { 'Content-type': 'application/json; charset=UTF-8' },
       }
       const resp = await service.methods.callService(data)
-      if (resp.length > 0) servicesArray.value = resp
+      if (resp.length > 0) {
+        servicesArray.value = resp
+        store.commit('SET_SERVICES', resp)
+      }
     }
     const getArticles = () => {
       const articlesArray = [

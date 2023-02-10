@@ -1,28 +1,20 @@
-// const state = {}
+const state = {
+  services: null,
+}
 
-// const getters = {}
+const getters = {}
 
-// const actions = {
-//   async callService({ commit }, api) {
-//     let options = {
-//       method: api.method,
-//       header: api.header,
-//     }
-//     switch (api.method) {
-//       case 'POST':
-//         options.body = api.data
-//         break
-//     }
-//     const resp = await fetch(api.url, options)
-//     return resp.json()
-//   },
-// }
+const actions = {}
 
-// const mutations = {}
+const mutations = {
+  SET_SERVICES(state, services) {
+    state.services = services
+  },
+}
 
-// export default {
-//   state,
-//   getters,
-//   actions,
-//   mutations,
-// }
+export default {
+  state,
+  getters,
+  actions,
+  mutations,
+}

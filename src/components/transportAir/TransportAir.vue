@@ -62,7 +62,7 @@
         </div>
         <div className="col-lg-9">
           <div className="Freight-item">
-            <h3>Internation Logistics & Transport</h3>
+            <h3>{{ data.name }}</h3>
             <p>{{ p1 }}.</p>
             <img src="@/assets/images/air/1.jpg" alt="" />
             <p>{{ p2 }}</p>
@@ -101,6 +101,7 @@ export default {
   props: {
     bdtitle: String,
     bdsub: String,
+    data: Object,
   },
   setup() {
     const p1 = ref(`We Provide you the best service in the world.

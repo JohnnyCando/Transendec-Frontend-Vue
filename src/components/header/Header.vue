@@ -44,7 +44,7 @@
                   <li>
                     <router-link to="/service">Servicios</router-link>
                     <ul class="submenu">
-                      <li :key="service" v-for="service in services">
+                      <li :key="service" v-for="service in servicesArray">
                         <router-link :to="`/service/${service.id}`">
                           {{ service.name }}
                         </router-link>
@@ -94,24 +94,23 @@
 
 <script>
 import { ref } from 'vue'
+import service from '@/mixins/service.js'
 export default {
   name: 'HeaderMain',
   props: {
     msg: String,
   },
+  mixins: [service],
   setup() {
-    const getServices = () => {
-      const servicesArray = [
-        {
-          name: 'Montacargas',
-          id: 1,
-        },
-        {
-          name: 'Transporte',
-          id: 2,
-        },
-      ]
-      return servicesArray
+    let servicesArray = ref([])
+    const getServices = async () => {
+      const data = {
+        url: '/services',
+        method: 'GET',
+        headers: { 'Content-type': 'application/json; charset=UTF-8' },
+      }
+      const resp = await service.methods.callService(data)
+      if (resp.length > 0) servicesArray.value = resp
     }
     const getArticles = () => {
       const articlesArray = [
@@ -130,12 +129,11 @@ export default {
       ]
       return articlesArray
     }
-    let services = ref([])
     let articles = ref([])
-    services = getServices()
+    getServices()
     articles = getArticles()
     return {
-      services,
+      servicesArray,
       articles,
     }
   },

@@ -42,7 +42,7 @@
                   </li>
                   <li><router-link to="/about">Nosotros</router-link></li>
                   <li>
-                    <router-link to="/service">Servicios</router-link>
+                    <span>Servicios</span>
                     <ul class="submenu">
                       <li :key="service" v-for="service in servicesArray">
                         <router-link :to="`/service/${service.id}`">
@@ -251,7 +251,8 @@ export default {
 .main-menu nav ul li > ul li:first-child {
   padding-left: 15px;
 }
-.main-menu nav ul li a {
+.main-menu nav ul li a,
+.main-menu nav ul li span {
   display: block;
   font-size: 15px;
   font-weight: 600;

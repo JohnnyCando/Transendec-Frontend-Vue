@@ -51,16 +51,16 @@
 
 <script>
 // @ is an alias to /src
-import simg1 from '@/assets/images/about-page/1.jpg'
-import simg2 from '@/assets/images/about-page/2.jpg'
-import simg3 from '@/assets/images/about-page/4.jpg'
+import simg1 from '@/assets/images/about/tiempo.jpg'
+import simg2 from '@/assets/images/about/comunidad.jpg'
+import simg3 from '@/assets/images/about/seguridad.png'
 import { ref } from 'vue'
 export default {
   name: 'missionMain',
   setup() {
-    let missionSafatyEnsure = ref(simg1)
+    let missionSafatyEnsure = ref(simg3)
     let missionBUiltComunity = ref(simg2)
-    let missionDelivery = ref(simg3)
+    let missionDelivery = ref(simg1)
     return {
       missionSafatyEnsure,
       missionBUiltComunity,

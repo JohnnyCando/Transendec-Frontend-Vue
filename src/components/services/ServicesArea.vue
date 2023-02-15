@@ -19,7 +19,7 @@
               <div class="service-img">
                 <img :src="imageTransport" alt="" />
               </div>
-              <div class="service-content">
+              <div class="service-content service-conten-box">
                 <h3>{{ service.name }}</h3>
               </div>
             </div>
@@ -251,7 +251,34 @@ export default {
 }
 .wpo-service-single {
   overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  margin-bottom: 30px;
+  width: 350px;
+  height: 330px;
 }
+
+.wpo-service-single .service-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.wpo-service-single .service-img img {
+  width: auto;
+  height: 110%;
+  position: absolute;
+  top: -5%;
+}
+
+.service-style-1 .service-content2,
+.service-style-1 .service-content {
+  top: 73%;
+}
+
 .wpo-service-single {
   position: relative;
   overflow: hidden;

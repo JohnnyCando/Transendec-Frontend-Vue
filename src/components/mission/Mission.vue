@@ -26,7 +26,7 @@
               <div class="service-img">
                 <img :src="missionBUiltComunity" alt="" />
               </div>
-              <div class="service-content2">
+              <div class="service-content">
                 <h3>Construir una Comunidad de Confianza</h3>
               </div>
             </div>
@@ -38,7 +38,7 @@
               <div class="service-img">
                 <img :src="missionDelivery" alt="" />
               </div>
-              <div class="service-content3">
+              <div class="service-content">
                 <h3>Entrega a tiempo</h3>
               </div>
             </div>
@@ -73,7 +73,8 @@ export default {
 .service-style-1 .service-content,
 .service-style-1 .service-content2,
 .service-style-1 .service-content3 {
-  top: 76%;
+  top: 72%;
+  padding: 29px 15px 20px 40px;
 }
 
 .service-style-1 .wpo-service-single:hover .wpo-service-content,

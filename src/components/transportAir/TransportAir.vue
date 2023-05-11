@@ -54,26 +54,14 @@
         <div class="col-lg-9">
           <div class="Freight-item">
             <h3>{{ data.name }}</h3>
-            <p>{{ p1 }}.</p>
-            <img src="@/assets/images/air/1.jpg" alt="" />
-            <p>{{ p2 }}</p>
+            <p>{{ data.description }}.</p>
+            <img :src="`/uploads/${data.imageBlog1}`" alt="" />
             <div class="Freight-s">
               <div class="Freight-img">
-                <img src="@/assets/images/air/2.jpg" alt="" />
+                <img :src="`/uploads/${data.imageBlog2}`" alt="" />
               </div>
               <div class="f-s">
-                <span>
-                  Ipsum is that it has a more-or-less normal distribution
-                </span>
-                <span>
-                  The point of using Lorem Ipsum is that it has any probl
-                </span>
-                <span>We Provide you the best service in the world.</span>
-                <span>
-                  It is a long established fact that a reader will do this
-                </span>
-                <span>Normal distribution of letters, as opposed</span>
-                <span>We can ensure your delivery</span>
+                {{ data.listCharacteristics }}
               </div>
             </div>
           </div>

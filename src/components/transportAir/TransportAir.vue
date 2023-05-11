@@ -56,7 +56,7 @@
             <h3>{{ data.name }}</h3>
             <p>{{ data.description }}.</p>
             <img :src="`/uploads/${data.imageBlog1}`" alt="" />
-            <div class="Freight-s">
+            <div v-if="data.useListDataAndImage2" class="Freight-s">
               <div class="Freight-img">
                 <img :src="`/uploads/${data.imageBlog2}`" alt="" />
               </div>

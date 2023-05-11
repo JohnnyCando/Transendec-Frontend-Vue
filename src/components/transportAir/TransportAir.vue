@@ -85,9 +85,11 @@ export default {
     const store = useStore()
     const servicesArray = computed(() => store.state.services.services)
     onMounted(() => {
-      let divList = document.getElementById('listCharacteristics')
-      console.log(divList)
-      divList.innerHTML = props.data.listCharacteristics
+      let divList = document.createElement('p')
+      let dataServices = props.data
+      divList.innerHTML = dataServices.listCharacteristics
+      let divFather = document.getElementById('listCharacteristics')
+      divFather.appendChild(divList)
     })
     const topPage = () => {
       document.body.scrollTop = 0 // For Safari

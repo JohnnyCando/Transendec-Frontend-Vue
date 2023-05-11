@@ -17,10 +17,7 @@
           <div class="wpo-service-item">
             <div class="wpo-service-single">
               <div class="service-img">
-                <img
-                  :src="`${process.env.VUE_APP_API_BASE}/uploads/${service.nameImage}`"
-                  alt=""
-                />
+                <img :src="`${url_base}/uploads/${service.nameImage}`" alt="" />
               </div>
               <div class="service-content service-conten-box">
                 <h3>{{ service.name }}</h3>
@@ -45,6 +42,7 @@ export default {
   name: 'servicesAreaMain',
   mixins: [service],
   setup() {
+    let url_base = ref(process.env.VUE_APP_API_BASE)
     let imageTransport = ref(sv1)
     let imageMontacargas = ref(sv4)
     const store = useStore()
@@ -74,6 +72,7 @@ export default {
       topPage,
       imageTransport,
       imageMontacargas,
+      url_base,
     }
   },
 }

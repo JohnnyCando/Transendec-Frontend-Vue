@@ -18,7 +18,7 @@
             <div class="wpo-service-single">
               <div class="service-img">
                 <img
-                  :src="`${process.env.VUE_APP_API}/uploads/${service.nameImage}`"
+                  :src="`${process.env.VUE_APP_API_BASE}/uploads/${service.nameImage}`"
                   alt=""
                 />
               </div>

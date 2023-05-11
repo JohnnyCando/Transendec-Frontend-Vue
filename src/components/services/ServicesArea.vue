@@ -17,7 +17,10 @@
           <div class="wpo-service-item">
             <div class="wpo-service-single">
               <div class="service-img">
-                <img :src="imageTransport" alt="" />
+                <img
+                  :src="`${process.env.VUE_APP_API}/uploads/${service.nameImage}`"
+                  alt=""
+                />
               </div>
               <div class="service-content service-conten-box">
                 <h3>{{ service.name }}</h3>

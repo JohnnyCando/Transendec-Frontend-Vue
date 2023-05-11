@@ -2,7 +2,7 @@
   <div class="contact-page-area section-padding">
     <div class="container">
       <div class="row">
-        <div class="col-lg-7 col-md-12">
+        <div class="col-lg-12 col-md-12">
           <div class="contact-area contact-area-2 contact-area-3">
             <h2>Crear Servicio</h2>
             <createServiceForm />

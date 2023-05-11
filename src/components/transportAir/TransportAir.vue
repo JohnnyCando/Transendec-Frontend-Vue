@@ -60,9 +60,7 @@
               <div class="Freight-img">
                 <img :src="`/uploads/${data.imageBlog2}`" alt="" />
               </div>
-              <div id="listCharacteristics" class="f-s">
-                {{ data.listCharacteristics }}
-              </div>
+              <div id="listCharacteristics" class="f-s"></div>
             </div>
           </div>
         </div>
@@ -87,8 +85,9 @@ export default {
     const store = useStore()
     const servicesArray = computed(() => store.state.services.services)
     onMounted(() => {
-      document.getElementById('listCharacteristics').innerHTML =
-        props.data.listCharacteristics
+      let divList = document.getElementById('listCharacteristics')
+      console.log(divList)
+      divList.innerHTML = props.data.listCharacteristics
     })
     const topPage = () => {
       document.body.scrollTop = 0 // For Safari

@@ -60,7 +60,7 @@
               <div class="Freight-img">
                 <img :src="`/uploads/${data.imageBlog2}`" alt="" />
               </div>
-              <div class="f-s">
+              <div id="listCharacteristics" class="f-s">
                 {{ data.listCharacteristics }}
               </div>
             </div>
@@ -73,7 +73,7 @@
 
 <script>
 // @ is an alias to /src
-import { ref, computed } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
 
 export default {
@@ -83,9 +83,13 @@ export default {
     bdsub: String,
     data: Object,
   },
-  setup() {
+  setup(props) {
     const store = useStore()
     const servicesArray = computed(() => store.state.services.services)
+    onMounted(() => {
+      document.getElementById('listCharacteristics').innerHTML =
+        props.data.listCharacteristics
+    })
     const topPage = () => {
       document.body.scrollTop = 0 // For Safari
       document.documentElement.scrollTop = 0

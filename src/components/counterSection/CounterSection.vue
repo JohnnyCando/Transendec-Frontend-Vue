@@ -4,16 +4,10 @@
       <div class="row">
         <div class="col-lg-7 col-md-6 col-sm-12">
           <div class="wpo-counter-content">
-            <h2>Our Some Important Things That will Satisfite You...</h2>
-            <p>
-              Many desktop publishing packages and web page editors now use
-              Lorem Ipsum as their default model text, and a search for 'lorem
-              ipsum' will uncover many web sites still in their infancy.Many
-              desktop publishing packages and web page editors now
-            </p>
+            <h2>Algunas cosas importantes que debes saber de nosotros...</h2>
             <div class="btns">
               <div class="btn-style btn-style-3">
-                <router-link to="/">Learn More About Us...</router-link>
+                <router-link to="/about">Saber más...</router-link>
               </div>
             </div>
           </div>
@@ -24,25 +18,25 @@
               <div>
                 <h2><span>4,012</span></h2>
               </div>
-              <p>Delivered Packages</p>
+              <p>Transportes Realizadas</p>
             </div>
             <div class="grid">
               <div>
-                <h2><span>605</span></h2>
+                <h2><span>2</span></h2>
               </div>
-              <p>Countries Covered</p>
+              <p>Ciudades Cubiertas</p>
             </div>
             <div class="grid">
               <div>
                 <h2><span>920</span></h2>
               </div>
-              <p>Satisfied Clients</p>
+              <p>Clientes Satisfechos</p>
             </div>
             <div class="grid">
               <div>
                 <h2><span>3,592</span></h2>
               </div>
-              <p>Tons of Goods</p>
+              <p>Toneladas Entregadas</p>
             </div>
           </div>
         </div>

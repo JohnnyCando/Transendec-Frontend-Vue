@@ -8,11 +8,42 @@
               <img src="@/assets/images/logo/logo-3.png" alt="" />
             </div>
             <p>
-              There are many variations of Lorem passages of Lorem Ipsum
-              available, but the majority
+              Porque nuestra mayor satisfacción es darte el mejor servicio y
+              experiencia.
             </p>
-            <p>By injected humour, or randomised words</p>
-            <div class="social">
+            <p>By Transendec S.A</p>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-6 footer-t"></div>
+          <div class="col-lg-3 col-md-6 col-sm-6 footer-t">
+            <div class="footer-router-link">
+              <h3>Enlaces Rápidos</h3>
+              <ul>
+                <li><router-link to="/">Inicio</router-link></li>
+                <li><router-link to="/about">Nosotros</router-link></li>
+                <li><router-link to="/contact">Contactanos</router-link></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-1 col-md-6 col-sm-6 footer-b">
+            <!-- <div class="Recent-News-area">
+              <h3>Noticias</h3>
+              <div class="resent-sub">
+                <p>There are many variations of passages of Lorem</p>
+                <span>
+                  <i class="fa fa-clock-o" aria-hidden="true"></i>
+                  Octobor 10, 2018
+                </span>
+              </div>
+              <p>There are many variations of passages of Lorem</p>
+              <span>
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                Octobor 10, 2018
+              </span>
+            </div>-->
+          </div>
+          <div class="col-lg-3 col-sm-6 col-12">
+            <div class="footer-widget instagram social">
+              <h3>Redes Sociales</h3>
               <ul class="d-flex">
                 <li>
                   <router-link to="/">
@@ -26,74 +57,12 @@
                 </li>
                 <li>
                   <router-link to="/">
-                    <i class="fa fa-router-linkedin" aria-hidden="true"></i>
-                  </router-link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 footer-t">
-            <div class="footer-router-link">
-              <h3>Quick router-link</h3>
-              <ul>
-                <li><router-link to="/">About Us</router-link></li>
-                <li><router-link to="/">Service</router-link></li>
-                <li><router-link to="/">Location</router-link></li>
-                <li><router-link to="/">Testimonial</router-link></li>
-                <li><router-link to="/">Contact</router-link></li>
-                <li><router-link to="/">Blog</router-link></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6 footer-b">
-            <div class="Recent-News-area">
-              <h3>Recent News</h3>
-              <div class="resent-sub">
-                <p>There are many variations of passages of Lorem</p>
-                <span>
-                  <i class="fa fa-clock-o" aria-hidden="true"></i>
-                  Octobor 10, 2018
-                </span>
-              </div>
-              <p>There are many variations of passages of Lorem</p>
-              <span>
-                <i class="fa fa-clock-o" aria-hidden="true"></i>
-                Octobor 10, 2018
-              </span>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6 col-12">
-            <div class="footer-widget instagram">
-              <h3>Instagram</h3>
-              <ul class="d-flex">
-                <li>
-                  <router-link to="/">
-                    <img src="@/assets/images/instragram/1.jpg" alt="" />
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
                   </router-link>
                 </li>
                 <li>
                   <router-link to="/">
-                    <img src="@/assets/images/instragram/2.jpg" alt="" />
-                  </router-link>
-                </li>
-                <li>
-                  <router-link to="/">
-                    <img src="@/assets/images/instragram/3.jpg" alt="" />
-                  </router-link>
-                </li>
-                <li>
-                  <router-link to="/">
-                    <img src="@/assets/images/instragram/4.jpg" alt="" />
-                  </router-link>
-                </li>
-                <li>
-                  <router-link to="/">
-                    <img src="@/assets/images/instragram/5.jpg" alt="" />
-                  </router-link>
-                </li>
-                <li>
-                  <router-link to="/">
-                    <img src="@/assets/images/instragram/6.jpg" alt="" />
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
                   </router-link>
                 </li>
               </ul>
@@ -107,7 +76,9 @@
         <div class="wpo-footer-bottom-content">
           <div class="row">
             <div class="col-12">
-              <span>© Copyrights 2020. All Rights Reserved.</span>
+              <span>
+                © Copyrights 2020. All Rights Reserved by Transendec S.A.
+              </span>
             </div>
           </div>
         </div>

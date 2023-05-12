@@ -29,8 +29,10 @@
                       />
                     </div>
                   </div>
-                  <div class="col-lg-4 col-md-4 col-sm-6">
-                    <button type="submit">Suscríbete</button>
+                  <div class="btn-style btn-style-3">
+                    <router-link class="button" to="/contact">
+                      Suscríbete
+                    </router-link>
                   </div>
                 </div>
               </form>

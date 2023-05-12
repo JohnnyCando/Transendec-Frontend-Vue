@@ -35,7 +35,13 @@ export default {
   setup() {
     let bdtitle = ref('About Us')
     let bdsub = ref('About')
+    const topPage = () => {
+      document.body.scrollTop = 0 // For Safari
+      document.documentElement.scrollTop = 0
+    }
+    topPage()
     return {
+      topPage,
       bdtitle,
       bdsub,
     }

@@ -56,11 +56,20 @@
             <h3>{{ data.name }}</h3>
             <p>{{ data.description }}.</p>
             <img :src="`/uploads/${data.imageBlog1}`" alt="" />
+            <p>{{ p1 }}</p>
             <div v-if="data.useListDataAndImage2" class="Freight-s">
               <div class="Freight-img">
-                <img :src="`/uploads/${data.imageBlog2}`" alt="" />
+                <img
+                  style="width: 370px; height: 270px"
+                  :src="`/uploads/${data.imageBlog2}`"
+                  alt=""
+                />
               </div>
-              <div id="listCharacteristics" class="f-s"></div>
+              <div
+                id="listCharacteristics"
+                v-html="data.listCharacteristics"
+                class="f-s"
+              ></div>
             </div>
           </div>
         </div>
@@ -81,16 +90,10 @@ export default {
     bdsub: String,
     data: Object,
   },
-  setup(props) {
+  setup() {
     const store = useStore()
     const servicesArray = computed(() => store.state.services.services)
-    onMounted(() => {
-      let divList = document.createElement('p')
-      let dataServices = props.data
-      divList.innerHTML = dataServices.listCharacteristics
-      let divFather = document.getElementById('listCharacteristics')
-      divFather.appendChild(divList)
-    })
+    onMounted(() => {})
     const topPage = () => {
       document.body.scrollTop = 0 // For Safari
       document.documentElement.scrollTop = 0

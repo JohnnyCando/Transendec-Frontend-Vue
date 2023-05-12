@@ -10,23 +10,36 @@
                 <div class="contact-s">
                   <span>
                     <i class="fa fa-phone" aria-hidden="true"></i>
-                    Call Us
+                    Llamanos al:
                   </span>
-                  <p>Tel: +555 965 325</p>
+                  <a
+                    :key="item"
+                    v-for="item in celArray"
+                    target="_blank"
+                    :href="`https://api.whatsapp.com/send?phone=+${item.phone}&text=Buenos días, me interesan sus servicios!`"
+                  >
+                    <span>
+                      <i class="fa fa-mobile"></i>
+                      +{{ item.phone }}
+                    </span>
+                  </a>
                 </div>
                 <div class="contact-s">
                   <span>
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                    Email Us
+                    Email
                   </span>
-                  <p>youremail@gmail.com</p>
+                  <span>transendec@gmail.com</span>
                 </div>
                 <div class="contact-s">
                   <span>
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Our Location
+                    Nuestra Ubicación
                   </span>
-                  <p>123 Banena Street, London</p>
+                  <span :key="address" v-for="address in addresses">
+                    <i class="fa fa-map-marker"></i>
+                    {{ address.address }}
+                  </span>
                 </div>
               </div>
             </div>
@@ -82,15 +95,48 @@
 // @ is an alias to /src
 import { ref, onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
-
+import service from '@/mixins/service.js'
 export default {
   name: 'TransportAir',
+  mixins: [service],
   props: {
     bdtitle: String,
     bdsub: String,
     data: Object,
   },
   setup() {
+    let celArray = ref([])
+    const fijArray = ref([])
+    const addresses = ref([])
+    const getPhones = async () => {
+      const data = {
+        url: '/phones',
+        method: 'GET',
+        headers: { 'Content-type': 'application/json; charset=UTF-8' },
+      }
+      const resp = await service.methods.callService(data)
+      if (resp.length > 0) {
+        celArray.value = resp.filter(
+          (item) => item.category === 'C' && item.typeClient === 'A',
+        )
+        fijArray.value = resp.filter(
+          (item) => item.category === 'F' && item.typeClient === 'A',
+        )
+      }
+    }
+    const getAddress = async () => {
+      const data = {
+        url: '/address',
+        method: 'GET',
+        headers: { 'Content-type': 'application/json; charset=UTF-8' },
+      }
+      const resp = await service.methods.callService(data)
+      if (resp.length > 0) {
+        addresses.value = resp.filter((item) => item.type === 'A')
+      }
+    }
+    getPhones()
+    getAddress()
     const store = useStore()
     const servicesArray = computed(() => store.state.services.services)
     onMounted(() => {})

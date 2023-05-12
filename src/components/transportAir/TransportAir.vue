@@ -23,15 +23,19 @@
                         <i class="fa fa-mobile"></i>
                         +{{ item.phone }}
                       </span>
+                      <br />
                     </a>
                   </p>
                 </div>
                 <div class="contact-s">
-                  <span>
-                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                    Email
-                  </span>
-                  <span>transendec@gmail.com</span>
+                  <p>
+                    <span>
+                      <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                      Email
+                    </span>
+                    <span>transendec@gmail.com</span>
+                    <br />
+                  </p>
                 </div>
                 <div class="contact-s">
                   <span>
@@ -40,7 +44,6 @@
                   </span>
                   <p>
                     <span :key="address" v-for="address in addresses">
-                      <i class="fa fa-map-marker"></i>
                       {{ address.address }}
                     </span>
                   </p>
@@ -162,7 +165,6 @@ export default {
 }
 
 .contact-us-area {
-  background-image: url('@/assets/images/air/air-fraight.jpg');
   background-repeat: no-repeat;
   background-position: top center;
   position: relative;

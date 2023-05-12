@@ -12,17 +12,19 @@
                     <i class="fa fa-phone" aria-hidden="true"></i>
                     Llamanos al:
                   </span>
-                  <a
-                    :key="item"
-                    v-for="item in celArray"
-                    target="_blank"
-                    :href="`https://api.whatsapp.com/send?phone=+${item.phone}&text=Buenos días, me interesan sus servicios!`"
-                  >
-                    <span>
-                      <i class="fa fa-mobile"></i>
-                      +{{ item.phone }}
-                    </span>
-                  </a>
+                  <p>
+                    <a
+                      :key="item"
+                      v-for="item in celArray"
+                      target="_blank"
+                      :href="`https://api.whatsapp.com/send?phone=+${item.phone}&text=Buenos días, me interesan sus servicios!`"
+                    >
+                      <span>
+                        <i class="fa fa-mobile"></i>
+                        +{{ item.phone }}
+                      </span>
+                    </a>
+                  </p>
                 </div>
                 <div class="contact-s">
                   <span>
@@ -36,10 +38,12 @@
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                     Nuestra Ubicación
                   </span>
-                  <span :key="address" v-for="address in addresses">
-                    <i class="fa fa-map-marker"></i>
-                    {{ address.address }}
-                  </span>
+                  <p>
+                    <span :key="address" v-for="address in addresses">
+                      <i class="fa fa-map-marker"></i>
+                      {{ address.address }}
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>

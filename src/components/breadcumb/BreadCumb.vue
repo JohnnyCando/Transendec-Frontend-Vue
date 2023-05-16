@@ -1,5 +1,8 @@
 <template>
-  <div class="breadcumb-area">
+  <div
+    class="breadcumb-area"
+    :style="`background-image: url('/uploads/${bdimagebg}'); background-position: center; background-size: cover; background-repeat: no-repeat;`"
+  >
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -22,18 +25,17 @@
 
 <script>
 // @ is an alias to /src
-
 export default {
   name: 'breadCumbMain',
   props: {
     bdtitle: String,
     bdsub: String,
+    bdimagebg: String,
   },
 }
 </script>
-<style>
+<style scoped>
 .breadcumb-area {
-  background: url('@/assets/images/breadcumb/bg.jpg') no-repeat center/cover;
   min-height: 550px;
   position: relative;
   display: flex;

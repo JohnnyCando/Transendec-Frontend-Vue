@@ -41,7 +41,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
+        <div class="col-lg-4 col-md-6" style="align-items: center">
           <div class="wpo-features-item">
             <div class="wpo-feature-img">
               <img :src="imgfe" alt="" />
@@ -90,7 +90,7 @@
 <script>
 // @ is an alias to /src
 import { ref } from 'vue'
-import feimg from '@/assets/images/features/1.png'
+import feimg from '@/assets/images/logo/logo-3.png'
 
 export default {
   name: 'wpoFeaturesMain',

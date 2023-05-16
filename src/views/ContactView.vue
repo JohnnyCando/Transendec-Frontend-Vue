@@ -1,7 +1,7 @@
 <template>
   <div>
     <navBar />
-    <breadCumbMain :bdtitle="bdtitle" :bdsub="bdsub" />
+    <breadCumbMain :bdtitle="bdtitle" :bdsub="bdsub" bdimagebg="bg.jpg" />
     <contactFormMain />
     <footerMain />
   </div>

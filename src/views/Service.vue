@@ -1,6 +1,6 @@
 <template>
   <navBar />
-  <breadCumb :bdtitle="title" bdsub="servicios"></breadCumb>
+  <breadCumb :bdtitle="title" bdsub="servicios" :bdimagebg="banner"></breadCumb>
   <transportAir :data="myService"></transportAir>
   <newSletter></newSletter>
   <footerMain></footerMain>
@@ -30,6 +30,7 @@ export default {
   },
   setup() {
     let title = ref('')
+    let banner = ref('')
     let myService = ref({})
     const route = useRoute()
     watch(
@@ -47,6 +48,7 @@ export default {
       const resp = await service.methods.callService(data)
       if (resp.id) {
         title.value = resp.name
+        banner.value = resp.imageBlog1
         myService.value = resp
       }
       return resp
@@ -57,6 +59,7 @@ export default {
     return {
       myService,
       title,
+      banner,
     }
   },
 }

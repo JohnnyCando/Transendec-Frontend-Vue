@@ -1,7 +1,7 @@
 <template>
   <div
     class="breadcumb-area"
-    :style="`background-image: url('/uploads/${bdimagebg}'); background-position: center; background-size: cover; background-repeat: no-repeat;`"
+    :style="`background-image: url('https://transendec.com/uploads/${bdimagebg}'); background-position: center; background-size: cover; background-repeat: no-repeat;`"
   >
     <div class="container">
       <div class="row">

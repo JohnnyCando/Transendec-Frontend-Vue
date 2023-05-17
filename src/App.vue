@@ -105,7 +105,7 @@ a:focus {
   top: 0;
   left: 0;
   width: 100%;
-  background: #142440;
+  background: #fff;
   border: none;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
@@ -114,5 +114,15 @@ a:focus {
 .fixed-navbar.active .header-style-2,
 .fixed-navbar.active .header-style-3 {
   background: #231b0e;
+}
+.fixed-navbar.active .header-style-1 .main-menu nav ul li a,
+.fixed-navbar.active .header-style-1 .main-menu nav ul li span {
+  color: #333;
+}
+.fixed-navbar.active .header-style-1 #logoNavbar {
+  display: none;
+}
+.fixed-navbar.active .header-style-1 #logoNavbarPRE {
+  display: block;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="wpo-service-area">
-    <div class="container">
+    <div class="" style="margin: 100px">
       <div class="col-l2">
         <div class="wpo-section-title text-center">
           <span>Proporcionamos lo mejor de</span>
@@ -17,7 +17,10 @@
           <div class="wpo-service-item">
             <div class="wpo-service-single">
               <div class="service-img">
-                <img :src="`/uploads/${service.nameImage}`" alt="" />
+                <img
+                  :src="`https://transendec.com/uploads/${service.nameImage}`"
+                  alt=""
+                />
               </div>
               <div class="service-content service-conten-box">
                 <h3>{{ service.name }}</h3>
@@ -255,8 +258,8 @@ export default {
   overflow: hidden;
   transition: all 0.3s;
   margin-bottom: 30px;
-  width: 350px;
-  height: 330px;
+  width: 500px;
+  height: 500px;
 }
 
 .wpo-service-single .service-img {

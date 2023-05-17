@@ -1,12 +1,12 @@
 <template>
   <navBar />
   <sliderMain />
-  <features2Main />
-  <aboutMain />
   <servicesAreaMain />
   <!-- <truckAreaMain /> -->
   <wpoFeaturesMain />
   <CounterSection subclass="counter-style-2"></CounterSection>
+  <features2Main />
+  <aboutMain />
   <newSletter></newSletter>
   <footerMain></footerMain>
 </template>

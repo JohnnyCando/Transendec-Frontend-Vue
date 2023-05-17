@@ -15,7 +15,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-lg-3 col-md-3 col-sm-12">
+          <div class="col-lg-1 col-md-3 col-sm-12">
             <div class="btn-style">
               <router-link to="/contact">Contactanos</router-link>
             </div>
@@ -28,8 +28,19 @@
         <div class="row">
           <div class="col-lg-3 col-md-10 col-sm-10 col-8 col-t">
             <div class="logo">
-              <router-link to="/" v-if="false">
-                <img src="@/assets/images/logo/logo-3.png" alt="" />
+              <router-link to="/">
+                <img
+                  id="logoNavbar"
+                  src="@/assets/images/logo/logo-3.png"
+                  style="height: 100%"
+                  alt=""
+                />
+                <img
+                  id="logoNavbarPRE"
+                  src="@/assets/images/logo/logo-3-previoew.png"
+                  style="height: 100%"
+                  alt=""
+                />
               </router-link>
             </div>
           </div>
@@ -149,7 +160,7 @@ export default {
 <style>
 .header-top,
 .header-top-1 {
-  background: #142440;
+  background: #f5f6f9;
   padding: 5px 0px;
 }
 
@@ -161,11 +172,11 @@ export default {
 .header-top-1 li {
   display: inline-block;
   padding: 5px;
-  color: #fff;
+  color: #333;
 }
 .header-top li i,
 .header-top-1 li i {
-  color: #fff;
+  color: #333;
 }
 
 .header-style-2 {
@@ -183,7 +194,7 @@ export default {
   width: 100%;
   position: absolute;
   z-index: 99;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(245, 239, 239, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .header-style-1 .main-menu,
@@ -212,7 +223,7 @@ export default {
   padding-right: 30px;
 }
 .account_login-area li i {
-  color: #fff;
+  color: #333;
   margin-right: 10px;
 }
 
@@ -260,6 +271,9 @@ export default {
   text-transform: uppercase;
   position: relative;
 }
+.header-style-1 #logoNavbarPRE {
+  display: none;
+}
 .main-menu nav ul li a:before {
   position: absolute;
   content: '';
@@ -301,7 +315,7 @@ export default {
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  opacity: 0;
+  opacity: 1;
   visibility: hidden;
 }
 

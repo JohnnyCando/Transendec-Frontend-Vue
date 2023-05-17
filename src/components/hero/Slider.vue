@@ -13,7 +13,7 @@
               <div class="col col-lg-9 slide-caption">
                 <h2>
                   <span>Brindamos la mejor solución</span>
-                  <span>Para Su Transporte.</span>
+                  <span>para su transporte.</span>
                 </h2>
                 <div class="btns">
                   <div class="btn-style">
@@ -27,7 +27,7 @@
         <slide class="slide2 slide">
           <div class="container">
             <div class="row">
-              <div class="col col-lg-9 slide-caption">
+              <div class="col col-lg-9 slide-caption" v-if="false">
                 <h2>
                   <span>Brindamos la mejor solución</span>
                   <span>Para Su Transporte.</span>
@@ -44,7 +44,24 @@
         <slide class="slide3 slide">
           <div class="container">
             <div class="row">
-              <div class="col col-lg-9 slide-caption">
+              <div class="col col-lg-9 slide-caption" v-if="false">
+                <h2>
+                  <span>Brindamos la mejor solución</span>
+                  <span>Para Su Transporte.</span>
+                </h2>
+                <div class="btns">
+                  <div class="btn-style">
+                    <router-link to="/">Contactanos</router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </slide>
+        <slide class="slide4 slide">
+          <div class="container">
+            <div class="row">
+              <div class="col col-lg-9 slide-caption" v-if="false">
                 <h2>
                   <span>Brindamos la mejor solución</span>
                   <span>Para Su Transporte.</span>
@@ -142,6 +159,10 @@ export default {
     local;
 }
 
+.slide4 {
+  background: url('@/assets/images/slider/2.jpg') center center/cover no-repeat
+    local;
+}
 .hero .slide .slider-bg {
   display: none;
 }
